@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +23,6 @@ namespace Calculadora
         private static int contOperadores = 0;
         private static String textPantalla = "";
         private static int contMuerte = 0;
-        private static int centinelaRes = 0;
         private void btn1_Click(object sender, EventArgs e)
         {
             lblResultado.ForeColor = Color.White;
@@ -189,6 +189,7 @@ namespace Calculadora
             lblResultado.ForeColor = Color.White;
 
             textPantalla += ",";
+            
             lblResultado.Text = textPantalla;
 
         }
@@ -204,25 +205,31 @@ namespace Calculadora
 
             double resultado = 0;
 
+            int x = 0;
             foreach (string word in operacion)
             {
-                n++;   
+                if (word.Length != 0)
+                {
+                    x++;
+                    Console.WriteLine("x = " + x);
+                }
+                
             }
 
-            if (n == 1 || n == 2)
+            if (x == 1 || x == 2)
             {
                 int i = 0;
                 foreach (string word in operacion)
                 {  
                     if (i == 0)
-                    {
+                    {                        
                         lblResultado.Text = word;
                         i++;
                     }
                     
                 }
                 
-            } else if (n == 3)
+            } else if (x == 3)
             {
 
             foreach (string word in operacion)
@@ -299,10 +306,30 @@ namespace Calculadora
             contOperadores = 0;
             label1.Text = "";
             contMuerte++;
+            x = 0;
+            n = 0;
+
 
         }
 
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            textPantalla = "";
+            contOperadores = 0;
+            label1.Text = "";
+            lblResultado.Text = textPantalla;
+        }
+
+        private void ChangeColourOnMouseEnter(object sender, EventArgs e)
+        {
+            ((Button)sender).BackColor = Color.FromArgb(129, 197, 219);
+        }
+
+        private void ChangeColourOnMouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).BackColor = Color.White;
+        }
+
         
-       
     }
 }
