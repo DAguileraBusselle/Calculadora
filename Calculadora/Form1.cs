@@ -204,6 +204,26 @@ namespace Calculadora
 
             double resultado = 0;
 
+            foreach (string word in operacion)
+            {
+                n++;   
+            }
+
+            if (n == 1 || n == 2)
+            {
+                int i = 0;
+                foreach (string word in operacion)
+                {  
+                    if (i == 0)
+                    {
+                        lblResultado.Text = word;
+                        i++;
+                    }
+                    
+                }
+                
+            } else if (n == 3)
+            {
 
             foreach (string word in operacion)
             {
@@ -271,6 +291,7 @@ namespace Calculadora
             {
                 lblResultado.ForeColor = Color.White;
                 lblResultado.Text = resultado.ToString();
+            }
             }
 
             
