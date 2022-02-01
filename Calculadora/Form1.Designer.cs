@@ -52,6 +52,7 @@ namespace Calculadora
             // 
             // lblResultado
             // 
+            this.lblResultado.AllowDrop = true;
             this.lblResultado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblResultado.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResultado.ForeColor = System.Drawing.Color.White;
@@ -60,6 +61,7 @@ namespace Calculadora
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(358, 79);
             this.lblResultado.TabIndex = 0;
+            this.lblResultado.TextChanged += new System.EventHandler(this.lblResultado_TextChanged);
             // 
             // btn1
             // 
@@ -263,7 +265,7 @@ namespace Calculadora
             this.btnDec.Name = "btnDec";
             this.btnDec.Size = new System.Drawing.Size(85, 60);
             this.btnDec.TabIndex = 16;
-            this.btnDec.Text = ",";
+            this.btnDec.Text = ".";
             this.btnDec.UseVisualStyleBackColor = true;
             this.btnDec.Click += new System.EventHandler(this.btnRest_Click);
             this.btnDec.MouseEnter += new System.EventHandler(this.ChangeColourOnMouseEnter);

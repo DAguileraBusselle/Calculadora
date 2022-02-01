@@ -19,305 +19,371 @@ namespace Calculadora
             InitializeComponent();
         }
 
+        private static String ultimaIntroCaracter = "";
+        private static String operacion = "";
+        private static Boolean resultadoAlmacenado = false;
+        private static int contPuntos = 0;
 
-        private static int contOperadores = 0;
-        private static String textPantalla = "";
-        private static int contMuerte = 0;
         private void btn1_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
-
-            textPantalla += "1";
-            lblResultado.Text = textPantalla;
+            if(resultadoAlmacenado)
+            {
+                operacion = "1";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
+            }
+            else
+            {
+                operacion += "1";
+                lblResultado.Text = operacion;
+            }
+                ultimaIntroCaracter = "1";
 
         }
 
         private void btn2_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "2";
-            lblResultado.Text = textPantalla;
 
+            if (resultadoAlmacenado)
+            {
+                operacion = "2";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
+
+            }
+            else
+            {
+                operacion += "2";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "2";
 
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
+            if (resultadoAlmacenado)
+            {
+                operacion = "3";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
-            textPantalla += "3";
-            lblResultado.Text = textPantalla;
-
+            }
+            else
+            {
+                operacion += "3";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "3";
 
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "4";
-            lblResultado.Text = textPantalla;
+            if (resultadoAlmacenado)
+            {
+                operacion = "4";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
+            }
+            else
+            {
+                operacion += "4";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "4";
 
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
+            if (resultadoAlmacenado)
+            {
+                operacion = "5";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
-            textPantalla += "5";
-            lblResultado.Text = textPantalla;
-
+            }
+            else
+            {
+                operacion += "5";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "5";
 
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "6";
-            lblResultado.Text = textPantalla;
+            if (resultadoAlmacenado)
+            {
+                operacion = "6";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
+            }
+            else
+            {
+                operacion += "6";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "6";
 
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "7";
-            lblResultado.Text = textPantalla;
+            if (resultadoAlmacenado)
+            {
+                operacion = "7";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
+            }
+            else
+            {
+                operacion += "7";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "7";
 
         }
 
         private void btn8_Click(object sender, EventArgs e)
 
         {
-            lblResultado.ForeColor = Color.White;
+            if (resultadoAlmacenado)
+            {
+                operacion = "8";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
-            textPantalla += "8";
-            lblResultado.Text = textPantalla;
-
+            }
+            else
+            {
+                operacion += "8";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "8";
 
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "9";
-            lblResultado.Text = textPantalla;
+            if (resultadoAlmacenado)
+            {
+                operacion = "9";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
+            }
+            else
+            {
+                operacion += "9";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "9";
 
         }
 
         private void btn10_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
 
-            textPantalla += "0";
-            lblResultado.Text = textPantalla;
+            if (resultadoAlmacenado)
+            {
+                operacion = "0";
+                resultadoAlmacenado = false;
+                lblResultado.Text = operacion;
 
+            }
+            else
+            {
+                operacion += "0";
+                lblResultado.Text = operacion;
+            }
+            ultimaIntroCaracter = "0";
 
         }
 
+
+
         private void btnMenos_Click(object sender, EventArgs e)
         {
-            if (contOperadores < 1)
+            if (operacion.Length > 0)
             {
-                textPantalla += " - ";
-                lblResultado.Text = textPantalla;
-                contOperadores++;
-            } else
-            {
-                label1.Text = "solo puede realizar una operacion";
-            }
-            
 
+                if (ultimaIntroCaracter.Equals("+") || ultimaIntroCaracter.Equals("-") || ultimaIntroCaracter.Equals("x") || ultimaIntroCaracter.Equals("/"))
+                {
+                    operacion = operacion.Substring(0, operacion.Length - 1);
+                    operacion += "-";
+                    resultadoAlmacenado = false;
+
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "-";
+                }
+                else
+                {
+                    operacion += "-";
+                    resultadoAlmacenado = false;
+
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "-";
+
+                }
+            }
+            contPuntos = 0;
 
         }
 
         private void btnMas_Click(object sender, EventArgs e)
         {
-            if (contOperadores < 1)
+            if (operacion.Length > 0)
             {
-                textPantalla += " + ";
-                lblResultado.Text = textPantalla;
-                contOperadores++;
-            } else
-            {
-                label1.Text = "solo puede realizar una operacion";
-            }
+                if (ultimaIntroCaracter.Equals("+") || ultimaIntroCaracter.Equals("-") || ultimaIntroCaracter.Equals("x") || ultimaIntroCaracter.Equals("/"))
+                {
+                    operacion = operacion.Substring(0, operacion.Length - 1);
+                    operacion += "+";
+                    resultadoAlmacenado = false;
 
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "+";
+                }
+                else
+                {
+                    operacion += "+";
+                    resultadoAlmacenado = false;
+
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "+";
+
+                }
+
+            }
+            contPuntos = 0;
 
         }
 
         private void btnMult_Click(object sender, EventArgs e)
         {
-            if (contOperadores < 1)
+            if(operacion.Length > 0)
             {
-                textPantalla += " x ";
-                lblResultado.Text = textPantalla;
-                contOperadores++;
-            } else
-            {
-                label1.Text = "solo puede realizar una operacion";
-            }
+               if (ultimaIntroCaracter.Equals("+") || ultimaIntroCaracter.Equals("-") || ultimaIntroCaracter.Equals("x") || ultimaIntroCaracter.Equals("/"))
+                {
+                    operacion = operacion.Substring(0, operacion.Length - 1);
+                    operacion += "x";
+                    resultadoAlmacenado = false;
 
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "x";
+                }
+                else
+                {
+                    operacion += "x";
+                    resultadoAlmacenado = false;
+
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "x";
+
+                }
+            }
+            contPuntos = 0;
 
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
-            if (contOperadores < 1)
+            if (operacion.Length > 0)
             {
-                textPantalla += " / ";
-                lblResultado.Text = textPantalla;
-                contOperadores++;
-            } else
-            {
-                label1.Text = "solo puede realizar una operacion";
-            }
+                if (ultimaIntroCaracter.Equals("+") || ultimaIntroCaracter.Equals("-") || ultimaIntroCaracter.Equals("x") || ultimaIntroCaracter.Equals("/"))
+                {
+                    operacion = operacion.Substring(0, operacion.Length - 1);
+                    operacion += "/";
+                    resultadoAlmacenado = false;
 
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "/";
+                }
+                else
+                {
+                    operacion += "/";
+                    resultadoAlmacenado = false;
+
+                    lblResultado.Text = operacion;
+
+                    ultimaIntroCaracter = "/";
+
+                }
+            }
+            contPuntos = 0;
 
         }
 
         private void btnRest_Click(object sender, EventArgs e)
         {
-            lblResultado.ForeColor = Color.White;
+            if (contPuntos == 0)
+            {
+                if (resultadoAlmacenado)
+                {
+                    operacion = "0.";
+                    resultadoAlmacenado = false;
+                    lblResultado.Text = operacion;
 
-            textPantalla += ",";
+                }
+                else
+                {
+                    operacion += ".";
+                    lblResultado.Text = operacion;
+                }
+                ultimaIntroCaracter = ".";
+                contPuntos++;
+            } 
+
             
-            lblResultado.Text = textPantalla;
-
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-
-            string[] operacion = textPantalla.Split(' ');
-            int n = 0;
-            Double num1 = 0;
-            Double num2 = 0;
-            string operador = "";
-
-            double resultado = 0;
-
-            int x = 0;
-            foreach (string word in operacion)
-            {
-                if (word.Length != 0)
+            Calc calc = new Calc();
+            if (operacion.Length > 0) {
+                operacion = operacion.Replace("x", "*");
+                char ultimoCaracter = operacion[operacion.Length - 1];
+                if (ultimoCaracter.Equals('+') || ultimoCaracter.Equals('-') || ultimoCaracter.Equals('*') || ultimoCaracter.Equals('/'))
                 {
-                    x++;
-                    Console.WriteLine("x = " + x);
+                    operacion = operacion.Substring(0, operacion.Length - 1);
                 }
-                
-            }
-
-            if (x == 1 || x == 2)
-            {
-                int i = 0;
-                foreach (string word in operacion)
-                {  
-                    if (i == 0)
-                    {                        
-                        lblResultado.Text = word;
-                        i++;
-                    }
-                    
-                }
-                
-            } else if (x == 3)
-            {
-
-            foreach (string word in operacion)
-            {
-                if (n==0)
-                {
-                    Console.WriteLine(word);
-
-                    num1 = Double.Parse(word);
-                    Console.WriteLine(num1);
-                    n++;
-                    
-                    
-                } else if (n==1)
-                {
-                    Console.WriteLine(word);
-
-                    operador = word;
-                    n++;
-                } else if (n==2)
-                {
-                    Console.WriteLine(word);
-                    
-                    num2 = Double.Parse(word);
-                    
-                    Console.WriteLine(num2);
-                    n++;
-                    
-                    
-                }
-            }
-
-            switch (operador)
-            {
-                case  "-":
-                    resultado = num1 - num2;
-                    Console.WriteLine(resultado);
-
-                    break;
-
-                case "+":
-                    resultado = num1 + num2;
-                    Console.WriteLine(resultado);
-
-                    break;
-
-                case "x":
-                    resultado = num1 * num2;
-                    Console.WriteLine(resultado);
-
-                    break;
-                case "/":
-                    resultado = num1 / num2;
-                    Console.WriteLine(resultado);
-
-                    break;
-
-            }
-
-            if (contMuerte == 5)
-            {
-                lblResultado.ForeColor = Color.Red;
-                
-                lblResultado.Text = "No";
+                Double resultado = calc.Resolver(operacion);
+                operacion = resultado.ToString();
+                lblResultado.Text = operacion;
+                resultadoAlmacenado = true;
             } else
             {
-                lblResultado.ForeColor = Color.White;
-                lblResultado.Text = resultado.ToString();
+                operacion = "";
+                lblResultado.Text = operacion;
             }
-            }
-
-            
-            textPantalla = "";
-            contOperadores = 0;
-            label1.Text = "";
-            contMuerte++;
-            x = 0;
-            n = 0;
-
-
+            ultimaIntroCaracter = "=";
         }
+
+        
 
         private void btnC_Click(object sender, EventArgs e)
         {
-            textPantalla = "";
-            contOperadores = 0;
+            operacion = "";
             label1.Text = "";
-            lblResultado.Text = textPantalla;
+            lblResultado.Text = operacion;
+            contPuntos = 0;
         }
 
         private void ChangeColourOnMouseEnter(object sender, EventArgs e)
@@ -330,6 +396,108 @@ namespace Calculadora
             ((Button)sender).BackColor = Color.White;
         }
 
-        
+        private void lblResultado_TextChanged(object sender, EventArgs e)
+        {
+            if (lblResultado.Text.Length == 0)
+            {
+                return;
+            }
+
+            float height = lblResultado.Height * 0.99f;
+            float width = lblResultado.Width * 0.99f;
+
+            lblResultado.SuspendLayout();
+
+            Font tryFont = lblResultado.Font;
+            Size tempSize = TextRenderer.MeasureText(lblResultado.Text, tryFont);
+
+            float heightRatio = height / tempSize.Height;
+            float widthRatio = width / tempSize.Width;
+
+            tryFont = new Font(tryFont.FontFamily, tryFont.Size * Math.Min(widthRatio, heightRatio), tryFont.Style);
+
+            lblResultado.Font = tryFont;
+            lblResultado.ResumeLayout();
+
+
+        }
+    }
+
+    public class Calc
+    {
+        public double Resolver(string ecuacion)
+        {
+            // Remove all spaces
+            ecuacion = Regex.Replace(ecuacion, @"\s+", "");
+
+            Operacion op = new Operacion();
+            op.Parse(ecuacion);
+
+            double resultado = op.Resolver();
+
+            return resultado;
+        }
+    }
+
+    public class Operacion
+    {
+        public Operacion numeroIzquierda { get; set; }
+        public string operador { get; set; }
+        public Operacion numeroDerecha { get; set; }
+
+        private Regex sumaResta = new Regex("[+-]", RegexOptions.RightToLeft);
+        private Regex multDiv = new Regex("[*/]", RegexOptions.RightToLeft);
+
+        public void Parse(string ecuacion)
+        {
+            var posicionOperador = sumaResta.Match(ecuacion);
+            if (!posicionOperador.Success)
+            {
+                posicionOperador = multDiv.Match(ecuacion);
+            }
+
+            if (posicionOperador.Success)
+            {
+                operador = posicionOperador.Value;
+
+                numeroIzquierda = new Operacion();
+                numeroIzquierda.Parse(ecuacion.Substring(0, posicionOperador.Index));
+
+                numeroDerecha = new Operacion();
+                numeroDerecha.Parse(ecuacion.Substring(posicionOperador.Index + 1));
+            }
+            else
+            {
+                operador = "v";
+                resultado = double.Parse(ecuacion);
+            }
+        }
+
+        private double resultado;
+
+        public double Resolver()
+        {
+            switch (operador)
+            {
+                case "v":
+                    break;
+                case "+":
+                    resultado = numeroIzquierda.Resolver() + numeroDerecha.Resolver();
+                    break;
+                case "-":
+                    resultado = numeroIzquierda.Resolver() - numeroDerecha.Resolver();
+                    break;
+                case "*":
+                    resultado = numeroIzquierda.Resolver() * numeroDerecha.Resolver();
+                    break;
+                case "/":
+                    resultado = numeroIzquierda.Resolver() / numeroDerecha.Resolver();
+                    break;
+                default:
+                    throw new Exception("Call Parse first.");
+            }
+
+            return resultado;
+        }
     }
 }

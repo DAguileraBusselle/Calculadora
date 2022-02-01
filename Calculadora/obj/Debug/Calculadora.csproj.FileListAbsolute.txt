@@ -8,3 +8,13 @@ C:\Users\Usuario\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.cspr
 C:\Users\Usuario\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.exe
 C:\Users\Usuario\source\repos\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.csproj.AssemblyReference.cache
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.Form1.resources
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.Properties.Resources.resources
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.csproj.GenerateResource.cache
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\david\OneDrive\Desktop\Calculadora\Calculadora\obj\Debug\Calculadora.pdb
